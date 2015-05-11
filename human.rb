@@ -8,4 +8,14 @@ class Human
   def alertness
     0
   end
+
+  def needs_coffee?
+    true
+  end
+
+  def buy(coffee)
+  end
+
+  def drink!
+  end
 end
