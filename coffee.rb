@@ -1,18 +1,19 @@
 class Coffee
   def initialize(type)
-    @drank = false
+    @drank = 0
   end
 
   def empty?
+    @drank == 3
 
   end
 
   def sip
-    @drank = true
+    @drank += 1
   end  
 
   def full?
-    !@drank 
+    @drank == 0 
   end
 
 end
