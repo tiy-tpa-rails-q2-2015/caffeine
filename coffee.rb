@@ -1,15 +1,17 @@
 class Coffee
+
+  TYPES = {
+    "Chai Mocha Latte" => { :rating => 0.25, :size => 2 },
+    "Triple Shot Mocha Frappuccino" => { :rating => 0.33, :size => 3 }
+  }
+
   def initialize(type)
     @type = type
     @drank = 0
   end
 
   def empty?
-    if @type == "Chai Mocha Latte" 
-      @drank == 2
-    else
-      @drank == 3
-    end
+    @drank == TYPES[@type][:size]
   end
 
   def sip
@@ -21,10 +23,6 @@ class Coffee
   end
   
   def rating 
-    if @type == "Chai Mocha Latte"
-       0.25
-    else 
-       0.33
-    end
+    TYPES[@type][:rating]
   end
 end
