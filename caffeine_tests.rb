@@ -22,7 +22,7 @@ class CaffeineTest < MiniTest::Test
 
     mallory.buy tsmf
     mallory.drink!
-    assert_in_epsilon mallory.alertness, 0.33, 0.001
+    assert_in_epsilon mallory.alertness, 0.33
     refute tsmf.full?
     refute tsmf.empty?
   end
@@ -35,5 +35,15 @@ class CaffeineTest < MiniTest::Test
     3.times { mallory.drink! }
     assert tsmf.empty?
     assert mallory.alertness > 0.9
+  end
+
+  def test_humans_like_different_kinds_of_coffee
+    bob = Human.new "Bob"
+    cml = Coffee.new "Chai Mocha Latte"
+    bob.buy cml
+
+    2.times { bob.drink! }
+    assert cml.empty?
+    assert_in_epsilon bob.alertness, 0.5
   end
 end
