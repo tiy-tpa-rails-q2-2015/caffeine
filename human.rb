@@ -1,12 +1,14 @@
 class Human
   def initialize(name)
+    @alertness = 0
+
   end
 
   def has_coffee?
   end
 
   def alertness
-    0
+    @alertness
   end
 
   def needs_coffee?
@@ -17,5 +19,6 @@ class Human
   end
 
   def drink!
+    @alertness += 0.33
   end
 end
